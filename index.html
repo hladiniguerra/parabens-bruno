@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bruno's Birthday Card</title>
+    <style>
+        /* Estilos Gerais */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1e1e21; 
+            color: white;
+            font-family: 'Gilroy-bold'; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            width: 90%;
+        }
+
+        /* TELA 1: ENVELOPE */
+        #tela-envelope {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .envelope-container {
+    position: relative; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img-envelope {
+    width: 500px; 
+    height: auto;
+}
+
+.conteudo-sobre-envelope {
+    position: absolute; 
+    text-align: center;
+}
+
+.btn-abrir {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 170px;
+}
+
+        /* TELA 2: CONTEÚDO (Escondida por padrão) */
+        #tela-conteudo {
+            display: none; 
+            animation: fadeIn 0.8s ease-in-out;
+        }
+
+        .fotos-grid {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .foto {
+            width: 150px;
+            height: 150px;
+            background-color: #333;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+
+        .texto-mensagem {
+            line-height: 1.6;
+            font-size: 14px;
+            color: #ccc;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <section id="tela-envelope">
+    <div class="envelope-container">
+        
+        <img src="carta.svg" class="img-envelope">
+
+        <div class="conteudo-sobre-envelope">
+            <button class="btn-abrir" onclick="abrirCard()">Clique para abrir 💌</button>
+        </div>
+
+    </div>
+</section>
+
+        <section id="tela-conteudo">
+            <h1>Feliz aniversário, Bruno! 🎉</h1>
+            
+            <div class="fotos-grid">
+                <img src="Rectangle 3.png" alt="eu y vc" class="foto">
+                <img src="Rectangle 4.png" alt="vc e mittens" class="foto">
+                <img src="Rectangle 5.png" alt="vc y eu" class="foto">
+            </div>
+
+            <h3>Feliz 01/04, meu amor!</h3>
+            <p class="texto-mensagem">
+                Feliz 01/04, meu amor! Sou muito feliz por poder comemorar mais um ano da sua vida ao seu lado, e espero que continuemos assim pra sempre. Me desafiei pra fazer esse presente pra você kkk, espero que goste! Te desejo tudo de melhor que existe nesse mundo, porque você merece demais. Eu, Mittens e Sasa te amamos muito. 💖
+            </p>
+        </section>
+
+    </div>
+
+    <script>
+        function abrirCard() {
+            document.getElementById('tela-envelope').style.display = 'none';
+            document.getElementById('tela-conteudo').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
